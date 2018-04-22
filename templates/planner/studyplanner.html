@@ -3,7 +3,7 @@
 		<div class="row">
 			<h1>Daily Study Hours</h1>
 			<h3 style="color:#808e9b">Fill in the details and figure out <br> how many hours you need to study everyday.</h3><br>
-			<form action="/studyplanner/" method="POST" id="myForm">
+			<form action="/" method="POST" id="myForm">
 				{% csrf_token %}
 				<div class="form-group">
 					<label>I have <input type="text" name="days" id="days"> days left until the exam.</label>

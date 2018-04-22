@@ -25,6 +25,6 @@ urlpatterns = [
 	# path('login/', signin),
 	# path('signup/', signup),
 	# path('logout/', signout),
-	path('studyplanner/', studyplanner),
+	path('', studyplanner),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
  

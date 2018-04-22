@@ -1,0 +1,33 @@
+body {
+	font-family: 'Nunito', sans-serif;
+}
+
+h1 {
+	color: #dff9fb;
+	font-size: 36px;
+	font-weight: 700;
+	text-align: center;
+	margin-bottom: 24px
+}
+
+label {
+	font-size: 18px;
+	color: #d1ccc0;
+}
+
+input {
+	padding-left: 10px;
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid #d1ccc0;
+	font-size: 18px;
+	font-weight: 400;
+	color: white;
+}
+
+input:focus, input:active {
+	border: none;
+	background: none;
+	border-bottom: 1px solid #d1ccc0;
+	outline: none;
+}

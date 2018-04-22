@@ -5,9 +5,6 @@ from planner.models import Profile, Planner
 from django.http import HttpResponse
 
 def studyplanner(request):
-	if not request.user.is_authenticated:
-		return redirect("/login/")
-
 	if request.method == "POST":
 		days = int(request.POST.get('days'))
 		subjects = request.POST.get('subjects')

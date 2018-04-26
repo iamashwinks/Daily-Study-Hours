@@ -4,46 +4,62 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>StudyPlanner</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
 		<link rel='shortcut icon' type='image/x-icon' href="{% static "images/favicon.ico" %}" >
+		<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	</head>
 	<body style="background-size: cover; background-repeat: no-repeat; background-image: url('{% static "images/books.jpg" %}');">
 		
-			<div class="container-fluid" style="text-align:center; margin-top: 50px;">
-				<div style="text-align: center;">
-					
+		<div class="container-fluid" style="text-align:center; margin-top: 50px;">
+			<div style="text-align: center;">
+				
 				<img src="{% static "images/logo5.jpg" %}" style="width:100px;height:100px; border-radius:50%; " alt="Daily Study Hours">
-				</div>
-		{% block body %}
+			</div>
+			{% block body %}
+				
+			{% endblock %}
 			
-		{% endblock %}
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-		<script>
-			$("#msgs").on('change', function()
-			{
-				var num = this.value;
-				if (num > 6) {
-					alert("Can only accomodate 6 subjects at the moment!")
-				}
-				else {
-					console.log(num);
-				if(Math.floor(num) == num && $.isNumeric(num))
-				{
-					$("#data-table").text('');
-					for(var i = 1; i <= num; i++)
-					{
-						$("#data-table").append("<label>I need</label>\
-								<input placeholder='X' type='text' name='subhour"+ i +"'>\
-								<label> hours to study</label>\
-								<input placeholder='Subject "+ i +"' type='text' name='sub"+ i + "'>.<br><br>");
-					}
-					$("#submit-btn").html("<button type='submit' class='btn btn-lg btn-warning'>Calculate</button>");
-				}
-			};
+			<script type="text/javascript">
+				$(document).ready(function() {
+			$("#msgs").on('keydown', function(event){
+			if(event.keyCode == 13) {
+			event.preventDefault();
+			return false;
+			}
 			});
-		</script>
-	</body>
-</html>
+			});
+			</script>
+			<script>
+			
+			$("#msgs").on('change', function()
+				{
+					var num = this.value;
+					if (num > 6) {
+						alert("Can only accomodate 6 subjects at the moment!")
+					}
+					else {
+						console.log(num);
+					if(Math.floor(num) == num && $.isNumeric(num))
+					{
+						$("#data-table").text('');
+						for(var i = 1; i <= num; i++)
+						{
+							$("#data-table").append("<label>I need</label>\
+									<input placeholder='X' type='text' name='subhour"+ i +"'>\
+									<label> hours to study</label>\
+									<input placeholder='Subject "+ i +"' type='text' name='sub"+ i + "'>.<br><br>");
+						}
+						$("#submit-btn").html("<button type='submit' class='btn btn-lg btn-warning'>Calculate</button>");
+					}
+				};
+				});
+			</script>
+			<script src="{% static 'js/jquery.flot.js' %}"></script>
+			
+		</body>
+	</html>

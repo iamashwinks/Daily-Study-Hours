@@ -2,11 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
 
-class Profile(models.Model):
-	student = models.OneToOneField(User, on_delete=models.CASCADE)
-	college = models.CharField(max_length = 200, blank = True)
-	sem = models.IntegerField(validators=[MaxValueValidator(8)],blank = True)
-
 class Planner(models.Model):
 	sub1 = models.CharField(max_length = 100, blank = True)
 	subhours1 = models.FloatField(blank = True)

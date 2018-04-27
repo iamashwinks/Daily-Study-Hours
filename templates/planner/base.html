@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>StudyPlanner</title>
@@ -12,7 +12,14 @@
 		<link rel='shortcut icon' type='image/x-icon' href="{% static "images/favicon.png" %}" >
 		<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118291853-1"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-118291853-1');
+		</script>
 	</head>
 	<body style="background-attachment: fixed; background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
 		
@@ -40,11 +47,10 @@
 						<p style="font-size:24px;color:#f5f6fa">You should study <b>{{ hours }} hours {{ minutes }} minutes</b> everyday if you start today. <br> Here's how many hours you need to study for everyday you waste <i class="em em-point_down"></i></p>
 					{% endif %}
 					{% if chart %}
-					<div id="chart">
-					
+						<div id="chart">
+							
 							<embed type="image/svg+xml" src="{{chart}}"/>
-
-					</div>
+						</div>
 					{% endif %}
 				</div>
 				<div class='col-md-2' style="margin-bottom: 50px;"></div>

@@ -2,6 +2,13 @@ dj-database-url==0.5.0
 Django==2.0.4
 django-heroku==0.3.1
 gunicorn==19.7.1
+httplib2==0.11.3
 psycopg2==2.7.4
+pyasn1==0.4.2
+pyasn1-modules==0.2.1
+pygal==2.4.0
 pytz==2018.4
+rsa==3.4.2
+six==1.11.0
+uritemplate==3.0.0
 whitenoise==3.3.1

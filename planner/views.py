@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from planner.models import Planner
 import pygal
-from pygal.style import NeonStyle, Style
+from pygal.style import Style
 
 def studyplanner(request):
 	if request.method == "POST":

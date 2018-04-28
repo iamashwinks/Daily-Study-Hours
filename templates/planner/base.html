@@ -35,9 +35,9 @@
 					<form action="/" method="POST" id="myForm">
 						{% csrf_token %}
 						<div class="form-group">
-							<label>I have <input type="text" name="days" id="days" value="{{ days }}"> days left until the exam.</label>
+							<label>I have <input type="text" name="days" id="days" value="{{ days }}" placeholder="X number of"> days left until the exam.</label>
 							<br>
-							<label>I have <input id="msgs" type="text" name="subjects" value="{{ subjects }}"> no. of subjects to study.</label>
+							<label>I have <input id="msgs" type="text" name="subjects" value="{{ subjects }}" placeholder="Y number of"> no. of subjects to study.</label>
 							<div id="data-table"></div>
 							<div id="submit-btn">
 							</div>
@@ -49,7 +49,7 @@
 					{% if chart %}
 						<div id="chart">
 							
-							<embed type="image/svg+xml" src="{{chart}}"/>
+							<embed type="image/svg+xml" src="{{chart|safe}}"/>
 						</div>
 					{% endif %}
 				</div>

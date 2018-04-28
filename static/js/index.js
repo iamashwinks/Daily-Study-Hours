@@ -7,10 +7,10 @@ $(document).ready(function() {
             console.log(num);
             if (Math.floor(num) == num && $.isNumeric(num)) {
                 $("#data-table").text('');
-            
+
                 for (var i = 1; i <= num; i++) {
                     $("#data-table").append("<label>I need</label>\
-									<input placeholder='X' type='text' name='subhour" + i + "'>\
+									<input placeholder='Z number of' type='text' name='subhour" + i + "'>\
 									<label> hours to study</label>\
 									<input placeholder='Subject " + i + "' type='text' name='sub" + i + "'>.<br><br>");
                 }

@@ -7,6 +7,7 @@ $(document).ready(function() {
             console.log(num);
             if (Math.floor(num) == num && $.isNumeric(num)) {
                 $("#data-table").text('');
+            
                 for (var i = 1; i <= num; i++) {
                     $("#data-table").append("<label>I need</label>\
 									<input placeholder='X' type='text' name='subhour" + i + "'>\

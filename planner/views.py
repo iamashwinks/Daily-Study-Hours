@@ -7,19 +7,19 @@ from pygal.style import Style
 
 def studyplanner(request):
 	if request.method == "POST":
-		days = int(request.POST.get('days'))
-		subjects = request.POST.get('subjects')
-		sub1 = request.POST.get('sub1')
+		days = int(request.POST.get('days', 1))
+		subjects = request.POST.get('subjects', 0)
+		sub1 = request.POST.get('sub1', 'Untitled')
 		subhour1 = float(request.POST.get('subhour1', 0))
-		sub2 = request.POST.get('sub2')
+		sub2 = request.POST.get('sub2', 'Untitled')
 		subhour2 = float(request.POST.get('subhour2', 0))
-		sub3 = request.POST.get('sub3')
+		sub3 = request.POST.get('sub3', 'Untitled')
 		subhour3 = float(request.POST.get('subhour3', 0))
-		sub4 = request.POST.get('sub4')
+		sub4 = request.POST.get('sub4', 'Untitled')
 		subhour4 = float(request.POST.get('subhour4', 0))
-		sub5 = request.POST.get('sub5')
+		sub5 = request.POST.get('sub5', 'Untitled')
 		subhour5 = float(request.POST.get('subhour5', 0))
-		sub6 = request.POST.get('sub6')
+		sub6 = request.POST.get('sub6', 'Untitled')
 		subhour6 = float(request.POST.get('subhour6', 0))
 		totalhours = float(subhour1 + subhour2 + subhour3 + subhour4 + subhour5 + subhour6)
 		dataset = []
